@@ -7,17 +7,19 @@ orbitType: string;
 operational: boolean;
 styleCheck: boolean;
 
+
 constructor(name: string, type: string, launchDate: string, orbitType: string, operational: boolean) {
 this.name=name;
 this.type=type;
 this.launchDate=launchDate;
 this.operational=operational;
 this.orbitType=orbitType;
+this.shouldShowWarning.bind(this);
 
 
 }
 
-shouldShowWarning() {
+shouldShowWarning(): boolean {
     let typeCheck = this.type;
     let tC = typeCheck.toLowerCase();
     let check = 'space debris';
